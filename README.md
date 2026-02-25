@@ -39,15 +39,25 @@ The server supports several IRC modes, including:
 
 ### Compilation
 
-The project is built using a C++17-compatible compiler.
+The project is compiled using the provided Makefile.
 
-Example with g++:
+To build :
 
 ``` bash
-c++ -Wall -Wextra -Werror -std=c++17 *.cpp -o ircserv
+make
 ```
 
-(Adapt file names as needed depending on your project structure.)
+To remove object files:
+
+``` bash
+make fclean
+```
+
+To rebuild from scratch:
+
+``` bash
+make re
+```
 
 ------------------------------------------------------------------------
 

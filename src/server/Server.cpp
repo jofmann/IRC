@@ -126,9 +126,8 @@ void Server::init(int domain)
     if (listen(_server_fd, 5) < 0)
         throw ServerException("Failed ");
 
-    // Changing _server_fd with Flags to be non blocking i/o
-    int flags = fcntl(_server_fd, F_GETFL, 0);
-    fcntl(_server_fd, F_SETFL, flags | O_NONBLOCK);
+    // Changing _server_fd with to be non blocking i/o
+    fcntl(_server_fd, F_SETFL, O_NONBLOCK);
     setupSignals();
     std::cout << Color::MAGENTA << "server runnning on port " << _port << "..." << Color::RESET << std::endl;
 }
